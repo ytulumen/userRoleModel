@@ -5,7 +5,6 @@ package com.yasin.model;
  */
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "USERROLES", catalog = "testdbyasin", uniqueConstraints = {
@@ -37,12 +36,5 @@ public class UserRoles extends AbsClass {
 
     public void setRole(Roles role) {
         this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return this.getClass().toString() +"[id=" + getId() + ", name=" + getName()
-                + ", create_date=" + getCreate() + ", update_date=" + getUpdate()
-                + ", user_ID=" + user.getId() + ", role_ID=" + role.getId() + "]";
     }
 }
