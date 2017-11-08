@@ -9,18 +9,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "USERROLES", catalog = "testdbyasin", uniqueConstraints = {
         @UniqueConstraint(columnNames = "NAME") })
+
 public class UserRoles extends AbsClass {
 
-    @ManyToOne(targetEntity = User.class, cascade = CascadeType.DETACH)
+    @ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "ID", name = "USER_ID")
     private User user;
 
-    @ManyToOne( targetEntity = Roles.class, cascade = CascadeType.DETACH)
+    @ManyToOne( targetEntity = Roles.class, cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "ID", name = "ROLE_ID")
     private Roles role;
-
-    public UserRoles() {
-    }
 
     public User getUser() {
         return user;

@@ -1,5 +1,8 @@
 package com.yasin.model;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,7 +12,9 @@ import javax.persistence.MappedSuperclass;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+
 @MappedSuperclass
+
 public abstract class AbsClass{
 
     @Id
@@ -20,16 +25,11 @@ public abstract class AbsClass{
     @Column(name = "NAME", unique = true, nullable = false, length = 30)
     private String name;
 
-    @Column(name = "CREATE_DATE", unique = true, nullable = false, length = 30)
+    @Column(name = "CREATE_DATE", unique = true)
     private Date create;
 
-    @Column(name = "UPDATE_DATE", unique = true, nullable = false, length = 30)
+    @Column(name = "UPDATE_DATE", unique = true)
     private Date update;
-
-    @Column(name = "PASSWORD", unique = true, nullable = false, length = 30)
-    private String password;
-
-
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -43,12 +43,4 @@ public abstract class AbsClass{
     public Date getUpdate() { return update; }
     public void setUpdate(Date update) { this.update = update; }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
-
-    @Override
-    public String toString() {
-        return this.getClass().toString() +"[id=" + id + ", name=" + name
-                + ", create_date=" + create + ", update_date=" + update + "]";
-    }
 }

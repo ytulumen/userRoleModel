@@ -7,6 +7,13 @@
     <groupId>com.userRoleModel</groupId>
     <artifactId>userRoleModel</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <distributionManagement>
+        <repository>
+            <id>dev</id>
+            <name>Local repository</name>
+            <url>file://${user.home}/.m2/repository</url>
+        </repository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>
@@ -18,21 +25,11 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <webXml>web/WEB-INF/web.xml</webXml>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.0.0.RELEASE</spring.version>
         <hibernate.version>4.2.6.Final</hibernate.version>
-        <mysql.connector.version>5.1.31</mysql.connector.version>
-
     </properties>
     <dependencies>
 
