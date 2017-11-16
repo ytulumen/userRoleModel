@@ -16,7 +16,7 @@ import javax.persistence.UniqueConstraint;
         @UniqueConstraint(columnNames = "NAME") })
 
 @NamedQueries(@NamedQuery(
-        name = "findByName",
+        name = "findUserByName",
         query = "SELECT e FROM User e WHERE e.name = :name")
 )
 public class User extends AbsClass {

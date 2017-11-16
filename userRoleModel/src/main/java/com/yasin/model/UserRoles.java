@@ -7,8 +7,14 @@ package com.yasin.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USERROLES", catalog = "testdbyasin", uniqueConstraints = {
+@Table(name = "UserRoles", catalog = "testdbyasin", uniqueConstraints = {
         @UniqueConstraint(columnNames = "NAME") })
+
+
+@org.hibernate.annotations.NamedQueries(@org.hibernate.annotations.NamedQuery(
+        name = "findUserRoleByName",
+        query = "SELECT e FROM UserRoles e WHERE e.name = :name")
+)
 
 public class UserRoles extends AbsClass {
 

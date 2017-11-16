@@ -1,10 +1,7 @@
 package com.yasin.model;
 
-import org.hibernate.annotations.NamedQueries;
-import org.hibernate.annotations.NamedQuery;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +11,6 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 
 @MappedSuperclass
-
 public abstract class AbsClass{
 
     @Id
@@ -25,10 +21,10 @@ public abstract class AbsClass{
     @Column(name = "NAME", unique = true, nullable = false, length = 30)
     private String name;
 
-    @Column(name = "CREATE_DATE", unique = true)
+    @Column(name = "CREATE_DATE")
     private Date create;
 
-    @Column(name = "UPDATE_DATE", unique = true)
+    @Column(name = "UPDATE_DATE")
     private Date update;
 
     public int getId() { return id; }

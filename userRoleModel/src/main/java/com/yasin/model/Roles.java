@@ -11,9 +11,13 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "ROLES", catalog = "testdbyasin", uniqueConstraints = {
+@Table(name = "Roles", catalog = "testdbyasin", uniqueConstraints = {
         @UniqueConstraint(columnNames = "NAME")})
 
+@NamedQueries(@NamedQuery(
+        name = "findRoleByName",
+        query = "SELECT e FROM Roles e WHERE e.name = :name")
+)
 public class Roles extends AbsClass {
 
 }
